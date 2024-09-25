@@ -1,3 +1,10 @@
+.DS_Store*
+*/.DS_Store*
+secrets.h
+*/secrets.h
+build*
+
+
 # Prerequisites
 *.d
 
