@@ -37,8 +37,10 @@ void camera_init(){
   config.frame_size = FRAMESIZE_XGA; //for 1024x768
   //config.frame_size = FRAMESIZE_SXGA; //for 1280x1024
   //config.frame_size = FRAMESIZE_UXGA; //for 1600x1200
-  config.jpeg_quality = 27; //10-63 lower number means higher quality
-  config.fb_count = 1; //Framebuffer count 1-2 (1 for lower quality)
+  // config.jpeg_quality = 27; //10-63 lower number means higher quality
+  config.jpeg_quality = 10; //10-63 lower number means higher quality
+  // config.fb_count = 1; //Framebuffer count 1-2 (1 for lower quality)
+  config.fb_count = 2; //Framebuffer count 1-2 (1 for lower quality)
 
   // camera init
   esp_err_t err = esp_camera_init(&config);

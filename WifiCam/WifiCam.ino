@@ -3,7 +3,7 @@
 // ATTENTION, ce code a été testé sur une Ai Thinker ESP32-CAM. Pas testé sur les autres boards !
 // Initial commit zf231111
 //
-#define zVERSION        "zf240925.1557"
+#define zVERSION        "zf240925.1610"
 // Il faut aussi modifier 'zWifiVersion' dans handlers.cpp !
 //#define zHOST           "esp-cam-st-luc1"        // ATTENTION, tout en minuscule
 #define zHOST           "esp-cam-crissier1"        // ATTENTION, tout en minuscule
