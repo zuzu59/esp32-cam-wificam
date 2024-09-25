@@ -1,7 +1,7 @@
 //
 // Camera server
 //
-#define zWifiVersion   "zf240923.1352"
+#define zWifiVersion   "zf240925.1557"
 //
 // Sources:
 // https://github.com/yoursunny/esp32cam
@@ -116,7 +116,10 @@ void addRequestHandlers(){
     server.send(200, "text/html", zString); 
     delay(3000);
     WiFi.disconnect();
-    // ESP.restart();
+    // Power off the ESP32-CAM
+    Serial.println("\nOn fait un power OFF de la caméra !\n");
+    digitalWrite(32, HIGH);
+    delay(2000); // Wait for 2 seconds
     esp_restart();
   });
 

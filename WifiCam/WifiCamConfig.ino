@@ -1,7 +1,7 @@
 //
 // Camera config
 //
-//zf240909.2316
+//zf240925.1539
 //
 // Sources:
 // https://github.com/wjsanek/wjsanek
@@ -32,9 +32,9 @@ void camera_init(){
   // Frame parameters
   //config.frame_size = FRAMESIZE_QVGA; //320x240
   //config.frame_size = FRAMESIZE_CIF; //400x296
-  config.frame_size = FRAMESIZE_VGA; //640x480
+  // config.frame_size = FRAMESIZE_VGA; //640x480
   //config.frame_size = FRAMESIZE_SVGA; //for 800x600
-  //config.frame_size = FRAMESIZE_XGA; //for 1024x768
+  config.frame_size = FRAMESIZE_XGA; //for 1024x768
   //config.frame_size = FRAMESIZE_SXGA; //for 1280x1024
   //config.frame_size = FRAMESIZE_UXGA; //for 1600x1200
   config.jpeg_quality = 27; //10-63 lower number means higher quality
@@ -44,8 +44,12 @@ void camera_init(){
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
     Serial.printf("[CAMERA] init failed with error 0x%x", err);
-    delay(5000);
-    ESP.restart();
+  // Power off the ESP32-CAM
+  Serial.println("\nOn fait un power OFF de la caméra !\n");
+  pinMode(32, OUTPUT);
+  digitalWrite(32, HIGH);
+  delay(2000); // Wait for 2 seconds
+  esp_restart();
   }
   else {  
     Serial.println("camera initialize success");

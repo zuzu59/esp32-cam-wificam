@@ -1,7 +1,7 @@
 //
 // WIFI
 //
-// zf240924.1639
+// zf240925.1539
 //
 // ATTENTION, c'est pour la famille ESP32, pas pour ESP32-C3 !
 //
@@ -62,9 +62,12 @@ void zWifiTrouble(){
     // On part en dsleep pour économiser la batterie !
     esp_deep_sleep_start();
   }
-  // ESP.restart();
+  // Power off the ESP32-CAM
+  Serial.println("\nOn fait un power OFF de la caméra !\n");
+  pinMode(32, OUTPUT);
+  digitalWrite(32, HIGH);
+  delay(2000); // Wait for 2 seconds
   esp_restart();
-
 }
 
 
@@ -195,6 +198,12 @@ void zWifiBegin(const char* zWIFI_SSID, const char* zWIFI_PASSWORD){
     if ( digitalRead(buttonPin) == LOW) {
       WiFiManager wm; wm.resetSettings();
       Serial.println("Config WIFI effacée !"); delay(1000);
+
+      // Power off the ESP32-CAM
+      Serial.println("\nOn fait un power OFF de la caméra !\n");
+      digitalWrite(32, HIGH);
+      delay(2000); // Wait for 2 seconds
+
       // ESP.restart();
       esp_restart();
 

@@ -3,7 +3,7 @@
 // ATTENTION, ce code a été testé sur une Ai Thinker ESP32-CAM. Pas testé sur les autres boards !
 // Initial commit zf231111
 //
-#define zVERSION        "zf240923.1406"
+#define zVERSION        "zf240925.1557"
 // Il faut aussi modifier 'zWifiVersion' dans handlers.cpp !
 //#define zHOST           "esp-cam-st-luc1"        // ATTENTION, tout en minuscule
 #define zHOST           "esp-cam-crissier1"        // ATTENTION, tout en minuscule
@@ -135,40 +135,48 @@ void setup(){
   zStartWifi();
   //sensorValue3 = WiFi.RSSI();
 
+  // Start MQTT server
+  Serial.println("\n\nConnect MQTT !\n");
+  ConnectMQTT();
+  // Send telemetrie to MQTT one time
+  zSendTelemetrieMqtt();
+  
   // Start OTA Arduino IDE
   ota_setup();
+  // OTA Arduino IDE one time
+  ArduinoOTA.handle();
 
   // Start OTA WEB server
   otaWebServer();
+  // OTA WEB  one time
+  serverOTA.handleClient();
 
-  // Connexion au MQTT
-  Serial.println("\n\nConnect MQTT !\n");
-  ConnectMQTT();
-
-  // go go go
-  Serial.println("\nC'est parti !\n");
-
-  Serial.println("\nOn fait un power reset de la caméra !\n");
-
-  pinMode(PWDN_GPIO_NUM, OUTPUT);
-
-  // Power off the ESP32-CAM
-  digitalWrite(PWDN_GPIO_NUM, LOW);
-  delay(2000); // Wait for 2 seconds
-
-  // Power on the ESP32-CAM
-  digitalWrite(PWDN_GPIO_NUM, HIGH);
-  delay(2000); // Wait for 2 seconds
-
-
-
-  // Configuration de la caméra
-  Serial.println("camera init...");
-  camera_init();
-
-  // Start de la caméra
+  // Start camera WEB server
   addRequestHandlers();
   server.begin();
+  // WEB camera server one time
+  server.handleClient();
+
+
+
+  // // Power RESET the ESP32-CAM
+  // pinMode(32, OUTPUT);
+  // Serial.println("\nOn fait un power RESET de la caméra !\n");
+
+  // // Power OFF the ESP32-CAM
+  // Serial.println("\nOn fait un power OFF de la caméra !\n");
+  // digitalWrite(32, HIGH);
+  // delay(2000); // Wait for 2 seconds
+
+  // // Power ON the ESP32-CAM
+  // Serial.println("\nOn fait un power ON de la caméra !\n");
+  // digitalWrite(32, LOW);
+  // delay(2000); // Wait for 2 seconds
+
+
+  // Camera init configuration
+  Serial.println("camera init...");
+  camera_init();
 }
 
 
