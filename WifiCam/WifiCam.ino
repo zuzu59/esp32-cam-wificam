@@ -3,11 +3,18 @@
 // ATTENTION, ce code a été testé sur une Ai Thinker ESP32-CAM. Pas testé sur les autres boards !
 // Initial commit zf231111
 //
+<<<<<<< HEAD
 #define zVERSION        "zf241022.1209"
 // Il faut aussi modifier 'zWifiVersion' dans handlers.cpp !
 // #define zHOST           "esp-cam-st-luc1"          // ATTENTION, tout en minuscule
 #define zHOST           "esp-cam-st-luc2"          // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-crissier1"        // ATTENTION, tout en minuscule
+=======
+#define zVERSION        "zf2409256.1151"
+// Il faut aussi modifier 'zWifiVersion' dans handlers.cpp !
+// #define zHOST           "esp-cam-st-luc1"          // ATTENTION, tout en minuscule
+#define zHOST           "esp-cam-crissier1"        // ATTENTION, tout en minuscule
+>>>>>>> 7cae0b4 (new: ajouté la 4e caméra au MsR)
 // #define zHOST           "esp-cam-msl1"             // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-msl2"             // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-msl3"             // ATTENTION, tout en minuscule
@@ -43,6 +50,7 @@ Sources:
 https://makeradvisor.com/esp32-cam-ov2640-camera/
 https://fr.aliexpress.com/item/1005001322358029.html
 https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/
+https://microcontrollerslab.com/esp32-cam-ai-thinker-pinout-gpio-pins-features-how-to-program/   très détaillé avec exemples d'utilisation !
 https://github.com/SeeedDocument/forum_doc/blob/master/reg/ESP32_CAM_V1.6.pdf
 https://github.com/yoursunny/esp32cam/tree/main/examples/WifiCam
 https://github.com/wjsanek/wjsanek
