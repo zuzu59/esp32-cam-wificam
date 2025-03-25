@@ -1,9 +1,10 @@
 //
 // Camera server
 //
-//zf240910.1150
+//zf250325.1821
 //
 // Sources:
+//Pour esp32cam.h il faut add l.ZIP ibrary:
 // https://github.com/yoursunny/esp32cam
 
 

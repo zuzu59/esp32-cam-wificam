@@ -1,10 +1,13 @@
 //
 // MQTT
 //
-// zf240923.1344
+// zf250325.1827
 //
 // ATTENTION, c'est pour la famille ESP32, pas pour ESP32-C3 !
 //
+// Sources:
+// https://dawidchyrzynski.github.io/arduino-home-assistant/documents/getting-started/installation.html#arduino-ide
+
 
 float sensorValue1 = 0;  // variable to store the value coming from the sensor 1
 float sensorValue2 = 0;  // variable to store the value coming from the sensor 2

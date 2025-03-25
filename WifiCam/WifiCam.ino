@@ -3,7 +3,7 @@
 // ATTENTION, ce code a été testé sur une Ai Thinker ESP32-CAM. Pas testé sur les autres boards !
 // Initial commit zf231111
 //
-#define zVERSION        "zf250325.1735"
+#define zVERSION        "zf250325.2131"
 // Il faut aussi modifier 'zWifiVersion' dans handlers.cpp !
 // #define zHOST           "esp-cam-st-luc1"          // ATTENTION, tout en minuscule
 #define zHOST           "esp-cam-st-luc-cuisine"          // ATTENTION, tout en minuscule
@@ -42,6 +42,8 @@ ATTENTION à l'ordre de chargement des librairies !
 
 Pour le WiFiManager, il faut installer cette lib depuis le lib manager sur Arduino:
 https://github.com/tzapu/WiFiManager
+
+
 
 
 Sources:
