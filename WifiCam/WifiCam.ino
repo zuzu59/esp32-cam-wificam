@@ -1,12 +1,12 @@
-// Petite caméra de surveillance à base de mini caméra Ai Thinker ESP32-CAM
+// Petite caméra de surveillance à base de mini caméra AI Thinker ESP32-CAM
 //
 // ATTENTION, ce code a été testé sur une Ai Thinker ESP32-CAM. Pas testé sur les autres boards !
 // Initial commit zf231111
 //
-#define zVERSION        "zf250325.2223"
+#define zVERSION        "zf250410.1519"
 // Il faut aussi modifier 'zWifiVersion' dans handlers.cpp !
 // #define zHOST           "esp-cam-st-luc1"          // ATTENTION, tout en minuscule
-#define zHOST           "esp-cam-st-luc-cuisine"          // ATTENTION, tout en minuscule
+// #define zHOST           "esp-cam-st-luc-cuisine"          // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-st-luc2"          // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-crissier1"        // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-crissier2"        // ATTENTION, tout en minuscule
@@ -14,6 +14,8 @@
 // #define zHOST           "esp-cam-msl2"             // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-msl3"             // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-msl4"             // ATTENTION, tout en minuscule
+#define zHOST           "esp-cam-msl5"             // ATTENTION, tout en minuscule
+// #define zHOST           "esp-cam-msl6"             // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-voyage1"             // ATTENTION, tout en minuscule
 // #define zHOST           "esp-cam-spy1"             // ATTENTION, tout en minuscule
 
@@ -37,6 +39,11 @@ Installation:
 
 Comme cet ESP32-CAM ne possède pas de connecteur USB avec convertisseur TTL il faut en ajouter un externe pour le premier flash, après on peut s'en passer en flashant via OTA
 Et ponter le IO0 avec le GND pour se mettre en mode flashing !
+
+****
+Si on utilise la carte fille avec l'USB/TTL, il faut choisir cu.wchusbserial et appuyer sur le bouton IO0 et le maintenir puis RESET, 
+mais celui de la carte caméra et PAS de la carte fille et enfin relacher IO0
+****
 
 ATTENTION à l'ordre de chargement des librairies !
 
